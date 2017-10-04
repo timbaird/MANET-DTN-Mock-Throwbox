@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="5482c75e-029a-400a-9c7b-3edc7b1b1669" ChangeDateTime="09/29/2017 05:14:13">
+    <Property Name="ElementName" Value="[dbo].[Item].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Item]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ItemID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="eda108cc-e568-4a1d-975a-9a877f7b0abb" ChangeDateTime="09/29/2017 06:17:52">
+    <Property Name="ElementName" Value="[dbo].[Item].[OriginatorType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Item]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Priority" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="28a41984-1a6c-4aad-936e-82145e445af7" ChangeDateTime="09/29/2017 06:24:45">
+    <Property Name="ElementName" Value="[dbo].[Priority].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Priority]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="35f35c67-5e66-455b-9bb3-688b4afc4918" ChangeDateTime="09/29/2017 06:24:53">
+    <Property Name="ElementName" Value="[dbo].[ItemType].[Type]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ItemType]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IType" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a0e7237c-acee-4e1c-b5f4-5075bca2f790" ChangeDateTime="09/29/2017 06:25:47">
+    <Property Name="ElementName" Value="[dbo].[Item].[Priority]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Item]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PriorityName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="77f13e93-7141-404c-b425-af3affb35d99" ChangeDateTime="09/29/2017 06:29:17">
+    <Property Name="ElementName" Value="[dbo].[RemoveFlag].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RemoveFlag]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ItemID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0a1385da-b759-4964-90ff-4a8537bf857f" ChangeDateTime="09/29/2017 07:31:30">
+    <Property Name="ElementName" Value="[dbo].[TransferLog].[FromID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TransferLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TransFromID" />
+  </Operation>
+</Operations>

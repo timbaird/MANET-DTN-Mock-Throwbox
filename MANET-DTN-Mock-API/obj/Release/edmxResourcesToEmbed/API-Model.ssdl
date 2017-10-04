@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MANET_DTN_MOCKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ItemType" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PriorityLevel" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="OriginatorID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="RecipientID" Type="nvarchar" MaxLength="30" />
+    <Property Name="TransFromID" Type="nvarchar" MaxLength="30" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Body" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="DateTimeCreated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RemoveFlag">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="OriginatorID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="DateTimeFlagged" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TransferLog">
+    <Key>
+      <PropertyRef Name="ItemID" />
+      <PropertyRef Name="IsRemoveFlag" />
+      <PropertyRef Name="TransFromID" />
+    </Key>
+    <Property Name="ItemID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="OriginatorId" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="IsRemoveFlag" Type="tinyint" Nullable="false" />
+    <Property Name="TransFromID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="DateTimeTransfered" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MANET_DTN_MOCK.dbo.ItemIDList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ItemIDList">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MANET_DTN_MOCK.dbo.RemoveIDList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RemoveIDList">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MANET_DTN_MOCKModelStoreContainer">
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RemoveFlag" EntityType="Self.RemoveFlag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransferLog" EntityType="Self.TransferLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemIDList" EntityType="Self.ItemIDList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ItemIDList].[ItemID] AS [ItemID]
+    FROM [dbo].[ItemIDList] AS [ItemIDList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RemoveIDList" EntityType="Self.RemoveIDList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RemoveIDList].[ItemID] AS [ItemID]
+    FROM [dbo].[RemoveIDList] AS [RemoveIDList]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

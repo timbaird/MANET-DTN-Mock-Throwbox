@@ -1,0 +1,42 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Item]
+       [dbo].[RemoveFlag]
+       [dbo].[TransferLog]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Item].[PLevel] is being dropped, data loss could occur.
+       The column [dbo].[Item].[PriorityLevel] on table [dbo].[Item] must be added, but the column has no default value and
+         does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+       The column [dbo].[Item].[TransFromID] on table [dbo].[Item] must be added, but the column has no default value and does
+         not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either:
+         add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a
+         deployment option.
+
+** User actions
+     Drop
+       [dbo].[FK_ITEM_PRIORITYLEVEL] (Foreign Key)
+     Table rebuild
+       [dbo].[Item] (Table)
+       [dbo].[RemoveFlag] (Table)
+       [dbo].[TransferLog] (Table)
+     Create
+       [dbo].[CHK_ITEM_PRIORITYLEVEL] (Check Constraint)
+
+** Supporting actions
+     Create
+       [dbo].[CHK_TYPE_RECIPIENT] (Check Constraint)
+     Refresh
+       [dbo].[ItemIDList] (View)
+       [dbo].[ItemView] (View)
+       [dbo].[RemoveIDList] (View)
+
+The column [dbo].[Item].[PLevel] is being dropped, data loss could occur.
+The column [dbo].[Item].[PriorityLevel] on table [dbo].[Item] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[Item].[TransFromID] on table [dbo].[Item] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+

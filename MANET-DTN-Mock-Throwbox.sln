@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MANET-DTN-Mock-Database", "..\MANET-DTN-Mock-Database\MANET-DTN-Mock-Database.sqlproj", "{07D2158D-5D53-4076-95FF-39EAA0DAB6D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MANET-DTN-Mock-API", "MANET-DTN-Mock-API\MANET-DTN-Mock-API.csproj", "{8054B057-DE9C-4708-AAC6-42551C892332}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07D2158D-5D53-4076-95FF-39EAA0DAB6D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07D2158D-5D53-4076-95FF-39EAA0DAB6D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07D2158D-5D53-4076-95FF-39EAA0DAB6D6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{07D2158D-5D53-4076-95FF-39EAA0DAB6D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07D2158D-5D53-4076-95FF-39EAA0DAB6D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07D2158D-5D53-4076-95FF-39EAA0DAB6D6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8054B057-DE9C-4708-AAC6-42551C892332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8054B057-DE9C-4708-AAC6-42551C892332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8054B057-DE9C-4708-AAC6-42551C892332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8054B057-DE9C-4708-AAC6-42551C892332}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {555C85C9-8479-470B-8595-0345649D05E9}
+	EndGlobalSection
+EndGlobal

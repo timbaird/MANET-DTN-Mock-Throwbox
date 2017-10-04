@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MANET_DTN_MOCKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ItemType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="PriorityLevel" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="OriginatorID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="RecipientID" Type="nvarchar" MaxLength="30" />
+          <Property Name="TransFromID" Type="nvarchar" MaxLength="30" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Body" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="DateTimeCreated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RemoveFlag">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="OriginatorID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="DateTimeFlagged" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TransferLog">
+          <Key>
+            <PropertyRef Name="ItemID" />
+            <PropertyRef Name="IsRemoveFlag" />
+            <PropertyRef Name="TransFromID" />
+          </Key>
+          <Property Name="ItemID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="OriginatorId" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="IsRemoveFlag" Type="tinyint" Nullable="false" />
+          <Property Name="TransFromID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="DateTimeTransfered" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MANET_DTN_MOCK.dbo.ItemIDList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ItemIDList">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MANET_DTN_MOCK.dbo.RemoveIDList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="RemoveIDList">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MANET_DTN_MOCKModelStoreContainer">
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RemoveFlag" EntityType="Self.RemoveFlag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransferLog" EntityType="Self.TransferLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemIDList" EntityType="Self.ItemIDList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ItemIDList].[ItemID] AS [ItemID]
+    FROM [dbo].[ItemIDList] AS [ItemIDList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RemoveIDList" EntityType="Self.RemoveIDList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RemoveIDList].[ItemID] AS [ItemID]
+    FROM [dbo].[RemoveIDList] AS [RemoveIDList]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MANET_DTN_MOCKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ItemType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PriorityLevel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OriginatorID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecipientID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TransFromID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Body" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateTimeCreated" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="RemoveFlag">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OriginatorID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateTimeFlagged" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="TransferLog">
+          <Key>
+            <PropertyRef Name="ItemID" />
+            <PropertyRef Name="IsRemoveFlag" />
+            <PropertyRef Name="TransFromID" />
+          </Key>
+          <Property Name="ItemID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OriginatorId" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsRemoveFlag" Type="Byte" Nullable="false" />
+          <Property Name="TransFromID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateTimeTransfered" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ItemIDList">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RemoveIDList">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MANET_DTN_MOCKEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="RemoveFlags" EntityType="Self.RemoveFlag" />
+          <EntitySet Name="TransferLogs" EntityType="Self.TransferLog" />
+          <EntitySet Name="ItemIDLists" EntityType="Self.ItemIDList" />
+          <EntitySet Name="RemoveIDLists" EntityType="Self.RemoveIDList" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MANET_DTN_MOCKModelStoreContainer" CdmEntityContainer="MANET_DTN_MOCKEntities">
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="MANET_DTN_MOCKModel.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="PriorityLevel" ColumnName="PriorityLevel" />
+                <ScalarProperty Name="OriginatorID" ColumnName="OriginatorID" />
+                <ScalarProperty Name="RecipientID" ColumnName="RecipientID" />
+                <ScalarProperty Name="TransFromID" ColumnName="TransFromID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="DateTimeCreated" ColumnName="DateTimeCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RemoveFlags">
+            <EntityTypeMapping TypeName="MANET_DTN_MOCKModel.RemoveFlag">
+              <MappingFragment StoreEntitySet="RemoveFlag">
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="OriginatorID" ColumnName="OriginatorID" />
+                <ScalarProperty Name="DateTimeFlagged" ColumnName="DateTimeFlagged" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransferLogs">
+            <EntityTypeMapping TypeName="MANET_DTN_MOCKModel.TransferLog">
+              <MappingFragment StoreEntitySet="TransferLog">
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="OriginatorId" ColumnName="OriginatorId" />
+                <ScalarProperty Name="IsRemoveFlag" ColumnName="IsRemoveFlag" />
+                <ScalarProperty Name="TransFromID" ColumnName="TransFromID" />
+                <ScalarProperty Name="DateTimeTransfered" ColumnName="DateTimeTransfered" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemIDLists">
+            <EntityTypeMapping TypeName="MANET_DTN_MOCKModel.ItemIDList">
+              <MappingFragment StoreEntitySet="ItemIDList">
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RemoveIDLists">
+            <EntityTypeMapping TypeName="MANET_DTN_MOCKModel.RemoveIDList">
+              <MappingFragment StoreEntitySet="RemoveIDList">
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

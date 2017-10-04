@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MANET_DTN_MOCKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PriorityLevel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OriginatorID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RecipientID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TransFromID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Body" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateTimeCreated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="RemoveFlag">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OriginatorID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateTimeFlagged" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="TransferLog">
+    <Key>
+      <PropertyRef Name="ItemID" />
+      <PropertyRef Name="IsRemoveFlag" />
+      <PropertyRef Name="TransFromID" />
+    </Key>
+    <Property Name="ItemID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OriginatorId" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsRemoveFlag" Type="Byte" Nullable="false" />
+    <Property Name="TransFromID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateTimeTransfered" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ItemIDList">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RemoveIDList">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MANET_DTN_MOCKEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Items" EntityType="Self.Item" />
+    <EntitySet Name="RemoveFlags" EntityType="Self.RemoveFlag" />
+    <EntitySet Name="TransferLogs" EntityType="Self.TransferLog" />
+    <EntitySet Name="ItemIDLists" EntityType="Self.ItemIDList" />
+    <EntitySet Name="RemoveIDLists" EntityType="Self.RemoveIDList" />
+  </EntityContainer>
+</Schema>

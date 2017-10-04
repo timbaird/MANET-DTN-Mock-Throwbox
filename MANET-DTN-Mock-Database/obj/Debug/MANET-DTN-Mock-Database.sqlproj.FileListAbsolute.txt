@@ -1,0 +1,5 @@
+C:\Users\tbaird\Repos\MANET-DTN-Mock-Database\bin\Debug\MANET-DTN-Mock-Database.dacpac
+C:\Users\tbaird\Repos\MANET-DTN-Mock-Database\obj\Debug\MANET_DTN_Mock_Database.dll
+C:\Users\tbaird\Repos\MANET-DTN-Mock-Database\obj\Debug\MANET_DTN_Mock_Database.pdb
+C:\Users\tbaird\Repos\MANET-DTN-Mock-Database\bin\Debug\MANET_DTN_Mock_Database.dll
+C:\Users\tbaird\Repos\MANET-DTN-Mock-Database\bin\Debug\MANET_DTN_Mock_Database.pdb

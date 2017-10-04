@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Item] (Table)
+       [dbo].[RemoveFlag] (Table)
+       [dbo].[TransferLog] (Table)
+       [dbo].[CHK_ITEM_PRIORITYLEVEL] (Check Constraint)
+       [dbo].[CHK_TYPE_RECIPIENT] (Check Constraint)
+       [dbo].[ItemIDList] (View)
+       [dbo].[RemoveIDList] (View)
+
+** Supporting actions

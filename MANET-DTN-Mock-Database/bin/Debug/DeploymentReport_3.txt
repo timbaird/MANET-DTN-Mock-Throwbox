@@ -1,0 +1,23 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Item] (Table)
+       [dbo].[PriorityLevel] (Table)
+       [dbo].[RemoveFlag] (Table)
+       [dbo].[TransferLog] (Table)
+       [dbo].[ItemID_SEQ] (Sequence)
+       [dbo].[FK_ITEM_PRIORITYLEVEL] (Foreign Key)
+       [dbo].[CHK_TYPE_RECIPIENT] (Check Constraint)
+       [dbo].[ItemView] (View)
+       [dbo].[RemoveIDList] (View)
+
+** Supporting actions

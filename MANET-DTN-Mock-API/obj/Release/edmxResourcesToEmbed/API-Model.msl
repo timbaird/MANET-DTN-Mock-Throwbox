@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MANET_DTN_MOCKModelStoreContainer" CdmEntityContainer="MANET_DTN_MOCKEntities">
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="MANET_DTN_MOCKModel.Item">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="PriorityLevel" ColumnName="PriorityLevel" />
+          <ScalarProperty Name="OriginatorID" ColumnName="OriginatorID" />
+          <ScalarProperty Name="RecipientID" ColumnName="RecipientID" />
+          <ScalarProperty Name="TransFromID" ColumnName="TransFromID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="DateTimeCreated" ColumnName="DateTimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RemoveFlags">
+      <EntityTypeMapping TypeName="MANET_DTN_MOCKModel.RemoveFlag">
+        <MappingFragment StoreEntitySet="RemoveFlag">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="OriginatorID" ColumnName="OriginatorID" />
+          <ScalarProperty Name="DateTimeFlagged" ColumnName="DateTimeFlagged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransferLogs">
+      <EntityTypeMapping TypeName="MANET_DTN_MOCKModel.TransferLog">
+        <MappingFragment StoreEntitySet="TransferLog">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="OriginatorId" ColumnName="OriginatorId" />
+          <ScalarProperty Name="IsRemoveFlag" ColumnName="IsRemoveFlag" />
+          <ScalarProperty Name="TransFromID" ColumnName="TransFromID" />
+          <ScalarProperty Name="DateTimeTransfered" ColumnName="DateTimeTransfered" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemIDLists">
+      <EntityTypeMapping TypeName="MANET_DTN_MOCKModel.ItemIDList">
+        <MappingFragment StoreEntitySet="ItemIDList">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RemoveIDLists">
+      <EntityTypeMapping TypeName="MANET_DTN_MOCKModel.RemoveIDList">
+        <MappingFragment StoreEntitySet="RemoveIDList">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[CHK_ITEM_PRIORITYLEVEL] (Check Constraint)
+     Alter
+       [dbo].[Item] (Table)
+     Create
+       [dbo].[CHK_ITEM_PRIORITYLEVEL] (Check Constraint)
+
+** Supporting actions
+     Refresh
+       [dbo].[ItemIDList] (View)

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="MANET_DTN_MOCKEntities-Web.config Connection String" description="MANET_DTN_MOCKEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/API-Model.csdl|res://*/API-Model.ssdl|res://*/API-Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=manetdtn.database.windows.net;initial catalog=MANET_DTN_MOCK;persist security info=True;user id=manetdtnadmin;password=Franterg69;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\tbaird\\Repos\\MANET-DTN-Mock-Throwbox\\MANET-DTN-Mock-API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MANET_DTN_MOCKEntities']/@connectionString" />
+  </parameter>
+</parameters>
